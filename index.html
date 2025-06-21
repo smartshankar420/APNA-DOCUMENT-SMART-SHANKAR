@@ -21,12 +21,14 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background-image: url('https://github.com/smartshankar420/APNA-DOCUMENT-SMART-SHANKAR/blob/main/WhatsApp%20Image%202025-04-21%20at%2020.52.15_397d8baa.jpg?raw=true');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://github.com/smartshankar420/APNA-DOCUMENT-SMART-SHANKAR/blob/main/WhatsApp%20Image%202025-04-21%20at%2020.52.15_397d8baa.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: white;
       text-align: center;
+      backdrop-filter: blur(2px); /* optional slight blur */
     }
 
     h1 {
@@ -68,6 +70,15 @@
       padding: 15px;
       font-size: 14px;
     }
+
+    /* Logo watermark at bottom right */
+    .logo {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      opacity: 0.4;
+      width: 80px;
+    }
   </style>
 </head>
 
@@ -94,5 +105,8 @@
   <div class="footer">
     © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
   </div>
+
+  <!-- Optional Logo Watermark -->
+  <img src="logo.png" alt="logo" class="logo" />
 </body>
 </html>
