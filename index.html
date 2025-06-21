@@ -17,6 +17,10 @@
 
   <!-- Style -->
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -28,18 +32,37 @@
       background-attachment: fixed;
       color: white;
       text-align: center;
-      backdrop-filter: blur(2px); /* optional slight blur */
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #00e676;
     }
 
     h1 {
-      margin-top: 60px;
+      margin-top: 30px;
       font-size: 30px;
       text-shadow: 2px 2px 5px #000;
     }
 
     p {
       font-size: 18px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       padding: 0 15px;
       text-shadow: 1px 1px 3px #000;
     }
@@ -71,7 +94,17 @@
       font-size: 14px;
     }
 
-    /* Logo watermark at bottom right */
+    /* Search */
+    #searchBox {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      width: 300px;
+      max-width: 80%;
+      margin-bottom: 30px;
+    }
+
     .logo {
       position: fixed;
       bottom: 15px;
@@ -80,24 +113,47 @@
       width: 80px;
     }
   </style>
+
+  <script>
+    function filterFiles() {
+      let input = document.getElementById('searchBox').value.toLowerCase();
+      let links = document.getElementsByClassName('button');
+      for (let i = 0; i < links.length; i++) {
+        let text = links[i].innerText.toLowerCase();
+        links[i].style.display = text.includes(input) ? 'inline-block' : 'none';
+      }
+    }
+  </script>
 </head>
 
 <body>
-  <section>
+
+  <!-- 🔝 Navigation Menu -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
     <h1>📘 Smart Shankar's Document Vault</h1>
     <p>Download study materials and documents uploaded by Smart Shankar.</p>
 
+    <!-- 🔍 Search Bar -->
+    <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
+
+    <br />
     <a href="GK%20OBJECTIVE%20NOTES.pdf" class="button">📥 GK Objective Notes</a>
     <a href="Tally_Presentation_Design_Animation_Ready.pdf" class="button">📄 Tally Prime Notes</a>
     <a href="Science_Chapter_1.pdf" class="button">🔬 Science Chapter 1</a>
   </section>
 
-  <section style="background: rgba(0,0,0,0.5);">
+  <section id="about" style="background: rgba(0,0,0,0.5);">
     <h2>📖 About Me</h2>
     <p>I'm Smart Shankar from Patna. This website is made to share important documents, study notes, and PDFs for students preparing for competitive exams or board exams.</p>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>📞 Contact</h2>
     <p>Email: smartshankar420@gmail.com<br>Mobile: 8677985797</p>
   </section>
@@ -106,7 +162,8 @@
     © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
   </div>
 
-  <!-- Optional Logo Watermark -->
+  <!-- 🔻 Logo (Optional) -->
   <img src="logo.png" alt="logo" class="logo" />
+
 </body>
 </html>
