@@ -88,6 +88,18 @@
       background-color: #00e676;
     }
 
+    .pdf-section {
+      margin: 40px auto;
+      max-width: 90%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+
     section {
       padding: 40px 20px;
     }
@@ -106,17 +118,20 @@
         margin: 20px auto;
         display: block;
       }
+
+      iframe {
+        height: 400px;
+      }
     }
   </style>
 
   <script>
     function filterFiles() {
       let input = document.getElementById("searchBox").value.toLowerCase();
-      let buttons = document.getElementsByClassName("button");
-      for (let i = 0; i < buttons.length; i++) {
-        let text = buttons[i].innerText.toLowerCase();
-        buttons[i].style.display = text.includes(input) ? "inline-block" : "none";
-      }
+      let items = document.querySelectorAll(".button, .pdf-section");
+      items.forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(input) ? "block" : "none";
+      });
     }
   </script>
 </head>
@@ -132,7 +147,13 @@
 
   <h1>📘 Smart Shankar's Document Vault</h1>
 
-  <a href="GK%20OBJECTIVE%20NOTES.pdf" download class="button">📥 GK Objective Notes</a>
+  <!-- GK Notes embedded -->
+  <div class="pdf-section">
+    <h2>📥 GK Objective Notes</h2>
+    <iframe src="GK%20OBJECTIVE%20NOTES.pdf"></iframe>
+  </div>
+
+  <!-- Other buttons (optional) -->
   <a href="Tally_Presentation_Design_Animation_Ready.pdf" download class="button">📄 Tally Prime Notes</a>
   <a href="sasdfsd%202.pdf" download class="button">📚 GK Notes (sasdfsd 2)</a>
 
