@@ -13,14 +13,46 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: #121212;
+      background-image: url('https://github.com/smartshankar420/APNA-DOCUMENT-SMART-SHANKAR/blob/main/WhatsApp%20Image%202025-04-21%20at%2020.52.15_397d8baa.jpg?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: white;
       text-align: center;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-box input {
+      padding: 6px 10px;
+      border-radius: 20px;
+      border: none;
+      font-size: 14px;
     }
 
     h1 {
       margin-top: 40px;
       font-size: 28px;
+      text-shadow: 2px 2px 5px #000;
     }
 
     .button {
@@ -53,8 +85,14 @@
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">📁 Smart Shankar</div>
+    <div class="search-box">
+      <input type="text" placeholder="Search Documents..." />
+    </div>
+  </header>
 
-  <h1>📁 Smart Shankar's Document Vault</h1>
+  <h1>📘 Document Vault</h1>
 
   <!-- GK Objective Button -->
   <button class="button" onclick="toggleSets()">📘 GK Objective Notes</button>
