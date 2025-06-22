@@ -6,15 +6,16 @@
   <title>Smart Shankar's Document Vault</title>
 
   <!-- SEO -->
-  <meta name="description" content="Smart Shankar's study notes, PDFs and documents." />
-  <meta name="keywords" content="Smart Shankar, GK Notes, Tally, PDF Download" />
+  <meta name="description" content="Download Smart Shankar's study notes, GK PDFs, and important documents." />
+  <meta name="keywords" content="Smart Shankar, GK Notes, Tally, Bihar Board, Study Material" />
   <meta name="author" content="Smart Shankar" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://smartshankar420.github.io/APNA-DOCUMENT-SMART-SHANKAR/" />
 
-  <!-- Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
 
+  <!-- Style -->
   <style>
     * {
       box-sizing: border-box;
@@ -24,21 +25,22 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('https://github.com/smartshankar420/APNA-DOCUMENT-SMART-SHANKAR/blob/main/WhatsApp%20Image%202025-04-21%20at%2020.52.15_397d8baa.jpg?raw=true');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: white;
-      text-align: center;
+      backdrop-filter: blur(2px);
     }
 
     nav {
       background: rgba(0, 0, 0, 0.7);
-      padding: 10px;
+      padding: 10px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
+      text-align: center;
     }
 
     nav a {
@@ -46,41 +48,26 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
 
     nav a:hover {
       color: #00e676;
     }
 
-    #searchBox {
-      padding: 10px;
-      border-radius: 20px;
-      border: none;
-      font-size: 16px;
-      width: 300px;
-      margin: 30px 0 20px 20px;
-      float: left;
-    }
-
     h1 {
-      font-size: 32px;
-      margin-top: 0;
-      padding-top: 20px;
-      clear: both;
-      text-shadow: 2px 2px 6px black;
-    }
-
-    .section-title {
-      font-size: 24px;
-      margin-top: 30px;
-    }
-
-    .pdf-frame {
-      width: 90%;
-      height: 600px;
-      border: 2px solid white;
-      border-radius: 10px;
       margin-top: 20px;
+      font-size: 30px;
+      text-shadow: 2px 2px 5px #000;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      padding: 0 15px;
+      text-shadow: 1px 1px 3px #000;
+      text-align: center;
     }
 
     .button {
@@ -92,7 +79,7 @@
       font-size: 16px;
       text-decoration: none;
       transition: background 0.3s ease;
-      margin: 20px auto;
+      margin: 10px;
       display: inline-block;
     }
 
@@ -101,72 +88,96 @@
     }
 
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .footer {
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       padding: 15px;
       font-size: 14px;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
-      #searchBox {
-        float: none;
-        width: 90%;
-        margin: 20px auto;
-        display: block;
-      }
+    #searchBox {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      width: 300px;
+      max-width: 80%;
+      margin: 30px 0 20px 30px; /* Left aligned */
+      display: block;
+      float: left;
+    }
 
-      .pdf-frame {
-        height: 400px;
-      }
+    .logo {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      opacity: 0.4;
+      width: 80px;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
     }
   </style>
 
+  <!-- Script -->
+  <script>
+    function filterFiles() {
+      let input = document.getElementById('searchBox').value.toLowerCase();
+      let links = document.getElementsByClassName('button');
+      for (let i = 0; i < links.length; i++) {
+        let text = links[i].innerText.toLowerCase();
+        links[i].style.display = text.includes(input) ? 'inline-block' : 'none';
+      }
+    }
+  </script>
 </head>
+
 <body>
+
+  <!-- Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <input type="text" id="searchBox" placeholder="Search notes..." />
+  <!-- Search + Title Section -->
+  <section id="home" class="clearfix">
+    <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
 
-  <h1>📘 Smart Shankar's Document Vault</h1>
+    <h1>📘 Smart Shankar's Document Vault</h1>
+    <p>Download study materials and documents uploaded by Smart Shankar.</p>
 
-  <!-- GK Objective Notes Section -->
-  <section id="gk-notes">
-    <h2 class="section-title">📖 GK Objective Notes</h2>
-
-    <!-- Set 1: Embedded PDF -->
-    <div>
-      <h3>📄 Set 1 (View Only)</h3>
-      <iframe src="GK%20OBJECTIVE%20NOTES.pdf" class="pdf-frame"></iframe>
-    </div>
-
-    <!-- Set 2: Button Box -->
-    <div>
-      <h3>📥 Set 2 (Downloadable)</h3>
-      <a href="GK_OBJECTIVE_SET_2.pdf" download class="button">Download Set 2</a>
-    </div>
+    <a href="GK%20OBJECTIVE%20NOTES.pdf" class="button">📥 GK Objective Notes</a>
+    <a href="Tally_Presentation_Design_Animation_Ready.pdf" class="button">📄 Tally Prime Notes</a>
+    <a href="Science_Chapter_1.pdf" class="button">🔬 Science Chapter 1</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" style="background: rgba(0, 0, 0, 0.5);">
-    <h2>🙋‍♂️ About Me</h2>
-    <p>I’m Smart Shankar from Patna. This website shares useful study notes and documents for students and learners.</p>
+  <!-- About -->
+  <section id="about" style="background: rgba(0,0,0,0.5); text-align: center;">
+    <h2>📖 About Me</h2>
+    <p>I'm Smart Shankar from Patna. This website is made to share important documents, study notes, and PDFs for students preparing for competitive exams or board exams.</p>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
+  <!-- Contact -->
+  <section id="contact" style="text-align: center;">
     <h2>📞 Contact</h2>
-    <p>Email: smartshankar420@gmail.com<br>Phone: 8677985797</p>
+    <p>Email: smartshankar420@gmail.com<br>Mobile: 8677985797</p>
   </section>
 
+  <!-- Footer -->
   <div class="footer">
-    © 2025 Smart Shankar | Made with ❤️ using GitHub Pages
+    © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
   </div>
+
+  <!-- Logo (optional) -->
+  <img src="logo.png" alt="logo" class="logo" />
+
 </body>
 </html>
