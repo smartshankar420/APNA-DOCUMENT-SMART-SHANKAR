@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Shankar's Document Vault</title>
 
-  <!-- Font and Style -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+
   <style>
     body {
       margin: 0;
@@ -52,10 +53,17 @@
   </style>
 </head>
 <body>
+
   <h1>📁 Smart Shankar's Document Vault</h1>
 
-  <!-- GK Objective Notes Main Button -->
+  <!-- GK Objective Button -->
   <button class="button" onclick="toggleSets()">📘 GK Objective Notes</button>
+
+  <!-- Tally Prime Button -->
+  <button class="button" onclick="showPDF('Tally_Presentation_Design_Animation_Ready.pdf')">📄 Tally Prime Notes</button>
+
+  <!-- Science Chapter 1 Button -->
+  <button class="button" onclick="showPDF('Science_Chapter_1.pdf')">🔬 Science Chapter 1</button>
 
   <!-- Set 1 to Set 10 Buttons -->
   <div class="set-buttons" id="setButtons">
@@ -74,7 +82,6 @@
   <!-- PDF Viewer -->
   <iframe id="pdfViewer" class="pdf-viewer"></iframe>
 
-  <!-- Script -->
   <script>
     function toggleSets() {
       const setDiv = document.getElementById('setButtons');
