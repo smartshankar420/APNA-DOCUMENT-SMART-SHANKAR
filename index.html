@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Shankar's Document Vault</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Smart Shankar's GK Notes Set-wise - Download & View directly." />
-  <meta name="keywords" content="Smart Shankar, GK Objective Sets, Set 1 to Set 10" />
-  <meta name="author" content="Smart Shankar" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Font & Style -->
+  <!-- Font and Style -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -19,28 +13,33 @@
       padding: 0;
       font-family: 'Poppins', sans-serif;
       background: #121212;
-      color: #fff;
+      color: white;
       text-align: center;
     }
 
     h1 {
       margin-top: 40px;
-      font-size: 30px;
+      font-size: 28px;
     }
 
     .button {
       background-color: #00c853;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 25px;
       border: none;
       border-radius: 30px;
       font-size: 16px;
-      margin: 8px;
+      margin: 10px;
       cursor: pointer;
     }
 
     .button:hover {
       background-color: #00e676;
+    }
+
+    .set-buttons {
+      display: none;
+      margin-top: 20px;
     }
 
     .pdf-viewer {
@@ -52,33 +51,40 @@
     }
   </style>
 </head>
-
 <body>
-  <h1>📘 Smart Shankar's GK Objective Notes</h1>
-  <p>Select a set below to view notes directly:</p>
+  <h1>📁 Smart Shankar's Document Vault</h1>
 
-  <!-- Buttons for Set 1 to 10 -->
-  <div id="set-buttons">
-    <button class="button" onclick="showPDF('Set-1.pdf')">📄 Set 1</button>
-    <button class="button" onclick="showPDF('Set-2.pdf')">📄 Set 2</button>
-    <button class="button" onclick="showPDF('Set-3.pdf')">📄 Set 3</button>
-    <button class="button" onclick="showPDF('Set-4.pdf')">📄 Set 4</button>
-    <button class="button" onclick="showPDF('Set-5.pdf')">📄 Set 5</button>
-    <button class="button" onclick="showPDF('Set-6.pdf')">📄 Set 6</button>
-    <button class="button" onclick="showPDF('Set-7.pdf')">📄 Set 7</button>
-    <button class="button" onclick="showPDF('Set-8.pdf')">📄 Set 8</button>
-    <button class="button" onclick="showPDF('Set-9.pdf')">📄 Set 9</button>
-    <button class="button" onclick="showPDF('Set-10.pdf')">📄 Set 10</button>
+  <!-- GK Objective Notes Main Button -->
+  <button class="button" onclick="toggleSets()">📘 GK Objective Notes</button>
+
+  <!-- Set 1 to Set 10 Buttons -->
+  <div class="set-buttons" id="setButtons">
+    <button class="button" onclick="showPDF('Set-1.pdf')">Set 1</button>
+    <button class="button" onclick="showPDF('Set-2.pdf')">Set 2</button>
+    <button class="button" onclick="showPDF('Set-3.pdf')">Set 3</button>
+    <button class="button" onclick="showPDF('Set-4.pdf')">Set 4</button>
+    <button class="button" onclick="showPDF('Set-5.pdf')">Set 5</button>
+    <button class="button" onclick="showPDF('Set-6.pdf')">Set 6</button>
+    <button class="button" onclick="showPDF('Set-7.pdf')">Set 7</button>
+    <button class="button" onclick="showPDF('Set-8.pdf')">Set 8</button>
+    <button class="button" onclick="showPDF('Set-9.pdf')">Set 9</button>
+    <button class="button" onclick="showPDF('Set-10.pdf')">Set 10</button>
   </div>
 
   <!-- PDF Viewer -->
   <iframe id="pdfViewer" class="pdf-viewer"></iframe>
 
+  <!-- Script -->
   <script>
-    function showPDF(pdfFile) {
-      var viewer = document.getElementById('pdfViewer');
+    function toggleSets() {
+      const setDiv = document.getElementById('setButtons');
+      setDiv.style.display = (setDiv.style.display === 'none' || setDiv.style.display === '') ? 'block' : 'none';
+    }
+
+    function showPDF(file) {
+      const viewer = document.getElementById('pdfViewer');
       viewer.style.display = 'block';
-      viewer.src = pdfFile;
+      viewer.src = file;
     }
   </script>
 </body>
