@@ -6,8 +6,8 @@
   <title>Smart Shankar's Document Vault</title>
 
   <!-- SEO -->
-  <meta name="description" content="Download Smart Shankar's study notes, GK PDFs, and important documents." />
-  <meta name="keywords" content="Smart Shankar, GK Notes, Study Material, Tally, Bihar Board" />
+  <meta name="description" content="Smart Shankar's study notes, PDFs and documents." />
+  <meta name="keywords" content="Smart Shankar, GK Notes, Tally, PDF Download" />
   <meta name="author" content="Smart Shankar" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://smartshankar420.github.io/APNA-DOCUMENT-SMART-SHANKAR/" />
@@ -30,12 +30,12 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
+      text-align: center;
     }
 
     nav {
       background: rgba(0, 0, 0, 0.7);
       padding: 10px;
-      text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -46,17 +46,10 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
     }
 
     nav a:hover {
       color: #00e676;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
     }
 
     #searchBox {
@@ -65,41 +58,45 @@
       border: none;
       font-size: 16px;
       width: 300px;
-      margin: 20px 0 30px 20px;
-      display: block;
+      margin: 30px 0 20px 20px;
+      float: left;
     }
 
     h1 {
       font-size: 32px;
-      text-align: center;
+      margin-top: 0;
+      padding-top: 20px;
+      clear: both;
       text-shadow: 2px 2px 6px black;
-      margin-top: 10px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      text-align: center;
+    .section-title {
+      font-size: 24px;
+      margin-top: 30px;
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 25px;
+    .pdf-frame {
+      width: 90%;
+      height: 600px;
+      border: 2px solid white;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
       background-color: #00c853;
       color: white;
+      padding: 12px 25px;
+      border: none;
       border-radius: 30px;
-      text-decoration: none;
       font-size: 16px;
-      transition: 0.3s ease;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin: 20px auto;
+      display: inline-block;
     }
 
-    .card a:hover {
+    .button:hover {
       background-color: #00e676;
     }
 
@@ -108,32 +105,26 @@
     }
 
     .footer {
-      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
       padding: 15px;
       font-size: 14px;
-      background: rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 600px) {
       #searchBox {
+        float: none;
         width: 90%;
-        margin-left: 10px;
+        margin: 20px auto;
+        display: block;
+      }
+
+      .pdf-frame {
+        height: 400px;
       }
     }
   </style>
 
-  <script>
-    function filterFiles() {
-      let input = document.getElementById("searchBox").value.toLowerCase();
-      let cards = document.getElementsByClassName("card");
-      for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        cards[i].style.display = text.includes(input) ? "block" : "none";
-      }
-    }
-  </script>
 </head>
-
 <body>
   <nav>
     <a href="#home">Home</a>
@@ -141,39 +132,41 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container" id="home">
-    <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
+  <input type="text" id="searchBox" placeholder="Search notes..." />
 
-    <h1>📘 Smart Shankar's Document Vault</h1>
+  <h1>📘 Smart Shankar's Document Vault</h1>
 
-    <div class="card">
-      <h3>📥 GK Objective Notes</h3>
-      <a href="GK%20OBJECTIVE%20NOTES.pdf" download>Download</a>
+  <!-- GK Objective Notes Section -->
+  <section id="gk-notes">
+    <h2 class="section-title">📖 GK Objective Notes</h2>
+
+    <!-- Set 1: Embedded PDF -->
+    <div>
+      <h3>📄 Set 1 (View Only)</h3>
+      <iframe src="GK%20OBJECTIVE%20NOTES.pdf" class="pdf-frame"></iframe>
     </div>
 
-    <div class="card">
-      <h3>📄 Tally Prime Notes</h3>
-      <a href="Tally_Presentation_Design_Animation_Ready.pdf" download>Download</a>
+    <!-- Set 2: Button Box -->
+    <div>
+      <h3>📥 Set 2 (Downloadable)</h3>
+      <a href="GK_OBJECTIVE_SET_2.pdf" download class="button">Download Set 2</a>
     </div>
-
-    <div class="card">
-      <h3>🔬 Science Chapter 1</h3>
-      <a href="Science_Chapter_1.pdf" download>Download</a>
-    </div>
-  </div>
-
-  <section id="about" style="background: rgba(0, 0, 0, 0.5); text-align: center;">
-    <h2>📖 About Me</h2>
-    <p>I'm Smart Shankar from Patna. This website is made to share important documents, study notes, and PDFs for students preparing for competitive exams or board exams.</p>
   </section>
 
-  <section id="contact" style="text-align: center;">
+  <!-- About Section -->
+  <section id="about" style="background: rgba(0, 0, 0, 0.5);">
+    <h2>🙋‍♂️ About Me</h2>
+    <p>I’m Smart Shankar from Patna. This website shares useful study notes and documents for students and learners.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
     <h2>📞 Contact</h2>
-    <p>Email: smartshankar420@gmail.com<br>Mobile: 8677985797</p>
+    <p>Email: smartshankar420@gmail.com<br>Phone: 8677985797</p>
   </section>
 
   <div class="footer">
-    © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
+    © 2025 Smart Shankar | Made with ❤️ using GitHub Pages
   </div>
 </body>
 </html>
