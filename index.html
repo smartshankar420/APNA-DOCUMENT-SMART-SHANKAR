@@ -5,27 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Shankar's Document Vault</title>
 
-  <!-- SEO Tags -->
-  <meta name="description" content="Download Smart Shankar's study notes, GK PDFs, and important documents." />
-  <meta name="keywords" content="Smart Shankar, GK Notes, Tally, Bihar Board, Study Material" />
-  <meta name="author" content="Smart Shankar" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://smartshankar420.github.io/APNA-DOCUMENT-SMART-SHANKAR/" />
-
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
 
-  <!-- CSS Styling -->
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('https://github.com/smartshankar420/APNA-DOCUMENT-SMART-SHANKAR/blob/main/WhatsApp%20Image%202025-04-21%20at%2020.52.15_397d8baa.jpg?raw=true');
       background-size: cover;
       background-attachment: fixed;
@@ -53,12 +41,6 @@
       color: #00e676;
     }
 
-    h1 {
-      margin-top: 30px;
-      font-size: 30px;
-      text-shadow: 2px 2px 5px #000;
-    }
-
     .button {
       background-color: #00c853;
       color: white;
@@ -74,10 +56,6 @@
       background-color: #00e676;
     }
 
-    #setButtons {
-      display: none;
-    }
-
     .pdf-frame {
       display: none;
       width: 90%;
@@ -86,75 +64,55 @@
       border: 2px solid white;
       border-radius: 10px;
     }
-
-    .footer {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      font-size: 14px;
-      margin-top: 50px;
-    }
   </style>
 </head>
 <body>
 
-  <!-- 🔝 Navigation -->
+  <!-- Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- 🏷️ Title -->
+  <!-- Title -->
   <h1>📘 Smart Shankar's Document Vault</h1>
 
-  <!-- 📥 GK Objective Main Button -->
+  <!-- GK Button -->
   <button class="button" onclick="toggleSetButtons()">📥 GK Objective Notes</button>
 
-  <!-- 📚 Set Buttons 1-10 -->
-  <div id="setButtons">
+  <!-- Set Buttons -->
+  <div id="setButtons" style="display:none;">
     <button class="button" onclick="togglePDF('Set-1.pdf')">Set 1</button>
-    <button class="button" onclick="togglePDF('Set-2.pdf')">Set 2</button>
-    <button class="button" onclick="togglePDF('Set-3.pdf')">Set 3</button>
-    <button class="button" onclick="togglePDF('Set-4.pdf')">Set 4</button>
-    <button class="button" onclick="togglePDF('Set-5.pdf')">Set 5</button>
-    <button class="button" onclick="togglePDF('Set-6.pdf')">Set 6</button>
-    <button class="button" onclick="togglePDF('Set-7.pdf')">Set 7</button>
-    <button class="button" onclick="togglePDF('Set-8.pdf')">Set 8</button>
-    <button class="button" onclick="togglePDF('Set-9.pdf')">Set 9</button>
-    <button class="button" onclick="togglePDF('Set-10.pdf')">Set 10</button>
+    <!-- Add more sets if needed -->
   </div>
 
-  <!-- 📄 PDF Viewer -->
+  <!-- PDF Viewer -->
   <iframe id="pdfViewer" class="pdf-frame"></iframe>
 
-  <!-- 💡 Script -->
+  <!-- Script -->
   <script>
     let currentPDF = "";
 
     function toggleSetButtons() {
-      const btns = document.getElementById("setButtons");
-      btns.style.display = (btns.style.display === "none" || btns.style.display === "") ? "block" : "none";
+      const btns = document.getElementById('setButtons');
+      btns.style.display = (btns.style.display === 'none' || btns.style.display === '') ? 'block' : 'none';
     }
 
     function togglePDF(file) {
-      const viewer = document.getElementById("pdfViewer");
+      const viewer = document.getElementById('pdfViewer');
 
       if (currentPDF === file) {
-        viewer.src = "";
-        viewer.style.display = "none";
-        currentPDF = "";
+        viewer.style.display = 'none';
+        viewer.src = '';
+        currentPDF = '';
       } else {
         viewer.src = file;
-        viewer.style.display = "block";
+        viewer.style.display = 'block';
         currentPDF = file;
       }
     }
   </script>
-
-  <!-- 👣 Footer -->
-  <div class="footer">
-    © 2025 Smart Shankar | Made with ❤️ using GitHub Pages
-  </div>
 
 </body>
 </html>
