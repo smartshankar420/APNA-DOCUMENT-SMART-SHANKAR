@@ -41,7 +41,7 @@
 
     h1 {
       font-size: 30px;
-      margin-top: 20px;
+      margin-top: 10px;
       text-shadow: 2px 2px 5px #000;
     }
 
@@ -74,6 +74,16 @@
       display: none;
     }
 
+    #searchBox {
+      margin-top: 30px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      width: 300px;
+      max-width: 90%;
+    }
+
     .footer {
       background: rgba(0, 0, 0, 0.6);
       padding: 15px;
@@ -90,10 +100,13 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- 🔍 Search Box -->
+  <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
+
   <h1>📘 Smart Shankar's Document Vault</h1>
   <p>Download study materials and documents uploaded by Smart Shankar.</p>
 
-  <!-- VVI GK/GS Objective Notes Button -->
+  <!-- VVI GK/GS Objective Button -->
   <button class="button" onclick="toggleSetButtons()">📘 VVI GK/GS Objective</button>
 
   <!-- Tally Prime Button -->
@@ -131,6 +144,7 @@
   <!-- Footer -->
   <div class="footer">© 2025 Smart Shankar | Built with ❤️ using GitHub Pages</div>
 
+  <!-- Scripts -->
   <script>
     let currentPDF = "";
     function toggleSetButtons() {
@@ -148,6 +162,15 @@
         viewer.src = file;
         viewer.style.display = "block";
         currentPDF = file;
+      }
+    }
+
+    function filterFiles() {
+      let input = document.getElementById('searchBox').value.toLowerCase();
+      let buttons = document.getElementsByClassName('button');
+      for (let i = 0; i < buttons.length; i++) {
+        let text = buttons[i].innerText.toLowerCase();
+        buttons[i].style.display = text.includes(input) ? 'inline-block' : 'none';
       }
     }
   </script>
