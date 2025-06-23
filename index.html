@@ -106,14 +106,6 @@
       margin-bottom: 20px;
     }
 
-    .logo {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      opacity: 0.4;
-      width: 80px;
-    }
-
     .set-buttons {
       display: none;
       margin: 20px 0;
@@ -139,7 +131,7 @@
     }
   </style>
 
-  <!-- Script -->
+  <!-- Scripts -->
   <script>
     function filterFiles() {
       let input = document.getElementById('searchBox').value.toLowerCase();
@@ -170,25 +162,26 @@
 
 <body>
 
-  <!-- Navigation -->
+  <!-- 🔝 Navigation -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Search Box -->
+  <!-- 🔍 Search -->
   <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
 
-  <!-- Title -->
+  <!-- 🏷️ Title -->
   <h1>📘 Smart Shankar's Document Vault</h1>
   <p>Download study materials and documents uploaded by Smart Shankar.</p>
 
-  <!-- GK Section with Set Buttons -->
+  <!-- 📘 GK Main Button -->
   <button class="button" onclick="toggleSets()">📘 VVI GK/GS Objective</button>
 
+  <!-- 🔢 Set Buttons (Set 1 → GK OBJECTIVE NOTES) -->
   <div id="setButtons" class="set-buttons">
-    <button class="button" onclick="togglePDF('Set-1.pdf')">Set 1</button>
+    <button class="button" onclick="togglePDF('GK%20OBJECTIVE%20NOTES.pdf')">Set 1</button>
     <button class="button" onclick="togglePDF('Set-2.pdf')">Set 2</button>
     <button class="button" onclick="togglePDF('Set-3.pdf')">Set 3</button>
     <button class="button" onclick="togglePDF('Set-4.pdf')">Set 4</button>
@@ -200,32 +193,29 @@
     <button class="button" onclick="togglePDF('Set-10.pdf')">Set 10</button>
   </div>
 
-  <!-- Tally & Polity Notes -->
+  <!-- 📄 Tally & 📘 Polity Buttons -->
   <button class="button" onclick="togglePDF('Tally_Presentation_Design_Animation_Ready.pdf')">📄 Tally Prime Notes</button>
   <button class="button" onclick="togglePDF('Polity_Notes.pdf')">📘 Polity Notes</button>
 
-  <!-- PDF Viewer -->
+  <!-- 📄 PDF Viewer -->
   <iframe id="pdfViewer" class="pdf-frame"></iframe>
 
-  <!-- About -->
+  <!-- 🙋 About -->
   <section id="about" style="background: rgba(0, 0, 0, 0.5);">
     <h2>📖 About Me</h2>
     <p>I'm Smart Shankar from Patna. This website is made to share important documents, study notes, and PDFs for students preparing for competitive exams or board exams.</p>
   </section>
 
-  <!-- Contact -->
+  <!-- 📞 Contact -->
   <section id="contact">
     <h2>📞 Contact</h2>
     <p>Email: smartshankar420@gmail.com<br>Mobile: 8677985797</p>
   </section>
 
-  <!-- Footer -->
+  <!-- 👣 Footer -->
   <div class="footer">
     © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
   </div>
-
-  <!-- Logo (optional) -->
-  <img src="logo.png" alt="logo" class="logo" />
 
 </body>
 </html>
