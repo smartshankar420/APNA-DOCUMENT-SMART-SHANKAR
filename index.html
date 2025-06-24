@@ -5,17 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Shankar's Document Vault</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Download Smart Shankar's study notes, GK PDFs, and important documents." />
-  <meta name="keywords" content="Smart Shankar, GK Notes, Tally, Bihar Board, Study Material" />
-  <meta name="author" content="Smart Shankar" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://smartshankar420.github.io/APNA-DOCUMENT-SMART-SHANKAR/" />
-
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
 
-  <!-- Style -->
   <style>
     * {
       box-sizing: border-box;
@@ -31,8 +23,8 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
-      text-align: center;
       backdrop-filter: blur(2px);
+      text-align: center;
     }
 
     nav {
@@ -64,7 +56,6 @@
     p {
       font-size: 18px;
       margin-bottom: 20px;
-      padding: 0 15px;
       text-shadow: 1px 1px 3px #000;
     }
 
@@ -86,117 +77,81 @@
       background-color: #00e676;
     }
 
-    section {
-      padding: 50px 20px;
+    #pdfFrame {
+      width: 90%;
+      height: 600px;
+      border: 2px solid #00c853;
+      border-radius: 10px;
+      margin: 30px auto;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 9999;
+      border: none;
+    }
+
+    #fullscreenToggle {
+      background-color: #ff9800;
     }
 
     .footer {
       background: rgba(0, 0, 0, 0.6);
       padding: 15px;
       font-size: 14px;
-    }
-
-    #searchBox {
-      padding: 10px;
-      border-radius: 20px;
-      border: none;
-      font-size: 16px;
-      width: 300px;
-      max-width: 80%;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    .logo {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      opacity: 0.4;
-      width: 80px;
-    }
-
-    .pdf-viewer {
-      width: 90%;
-      height: 600px;
-      border: 2px solid white;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: none;
+      text-align: center;
     }
   </style>
 
-  <!-- Script -->
   <script>
-    function filterFiles() {
-      let input = document.getElementById('searchBox').value.toLowerCase();
-      let links = document.getElementsByClassName('button');
-      for (let i = 0; i < links.length; i++) {
-        let text = links[i].innerText.toLowerCase();
-        links[i].style.display = text.includes(input) ? 'inline-block' : 'none';
-      }
-    }
+    function toggleFullscreen() {
+      const iframe = document.getElementById("pdfFrame");
+      const btn = document.getElementById("fullscreenToggle");
 
-    function togglePDF(file) {
-      const viewer = document.getElementById("pdfViewer");
-      const newURL = `https://smartshankar420.github.io/APNA-DOCUMENT-SMART-SHANKAR/${file}`;
-
-      if (viewer.src === newURL) {
-        viewer.src = "";
-        viewer.style.display = "none";
+      if (iframe.classList.contains("fullscreen")) {
+        iframe.classList.remove("fullscreen");
+        btn.innerText = "📺 Full View";
       } else {
-        viewer.src = newURL;
-        viewer.style.display = "block";
+        iframe.classList.add("fullscreen");
+        btn.innerText = "❌ Exit Full View";
       }
     }
   </script>
 </head>
 
 <body>
-  <!-- 🔝 Navigation Menu -->
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- 🔍 Search Box Above Title -->
-  <section id="home">
-    <input type="text" id="searchBox" onkeyup="filterFiles()" placeholder="Search notes..." />
+  <h1>📘 Smart Shankar's Document Vault</h1>
+  <p>Download study materials and documents uploaded by Smart Shankar.</p>
 
-    <h1>📘 Smart Shankar's Document Vault</h1>
-    <p>Download study materials and documents uploaded by Smart Shankar.</p>
-
-    <!-- GK Objective Notes Buttons -->
-    <button class="button" onclick="togglePDF('GK%20OBJECTIVE%20NOTES.pdf')">📘 VVI GK/GS Objective - Set 1</button>
-    <button class="button" onclick="togglePDF('sasdfsd%202.pdf')">📘 VVI GK/GS Objective - Set 2</button>
-
-    <!-- Other Notes -->
-    <a href="Tally_Presentation_Design_Animation_Ready.pdf" class="button">📄 Tally Prime Notes</a>
-    <a href="Science_Chapter_1.pdf" class="button">🔬 Science Chapter 1</a>
-  </section>
+  <button id="fullscreenToggle" class="button" onclick="toggleFullscreen()">📺 Full View</button>
 
   <!-- PDF Viewer -->
-  <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+  <iframe id="pdfFrame" src="GK%20OBJECTIVE%20NOTES.pdf"></iframe>
 
-  <!-- 📖 About Section -->
   <section id="about" style="background: rgba(0,0,0,0.5);">
     <h2>📖 About Me</h2>
     <p>I'm Smart Shankar from Patna. This website is made to share important documents, study notes, and PDFs for students preparing for competitive exams or board exams.</p>
   </section>
 
-  <!-- 📞 Contact Section -->
   <section id="contact">
     <h2>📞 Contact</h2>
     <p>Email: smartshankar420@gmail.com<br>Mobile: 8677985797</p>
   </section>
 
-  <!-- 👣 Footer -->
   <div class="footer">
     © 2025 Smart Shankar | Built with ❤️ using GitHub Pages
   </div>
-
-  <!-- 🔻 Logo Watermark -->
-  <img src="logo.png" alt="logo" class="logo" />
-
 </body>
 </html>
